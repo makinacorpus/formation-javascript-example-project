@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: './src/index.js',
@@ -14,8 +14,8 @@ module.exports = {
       title: 'Example Project for JavaScript training',
     }),
     new ExtractTextPlugin('styles.css'),
-    new BundleAnalyzerPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
+    // new BundleAnalyzerPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [{
@@ -24,6 +24,15 @@ module.exports = {
         fallback: 'style-loader',
         use: 'css-loader',
       }),
+    }, {
+      test: /\.js$/,
+      exclude: /(node_modules)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env'],
+        },
+      },
     }],
   },
   output: {
