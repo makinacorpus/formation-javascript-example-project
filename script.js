@@ -1,1 +1,2 @@
-console.log('Hello World');
+var a = 'b';
+console.log('Hello World ' + a);
