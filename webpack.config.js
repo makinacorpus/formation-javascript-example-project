@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -11,15 +12,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Example Project for JavaScript training',
     }),
+    new ExtractTextPlugin('styles.css'),
     new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [{
       test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader',
-      ],
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader',
+      }),
     }],
   },
   output: {
