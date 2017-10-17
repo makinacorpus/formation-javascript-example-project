@@ -1,0 +1,15 @@
+{
+  "name": "formation-javascript-example-project",
+  "version": "0.0.1",
+  "description": "Simple project for JavaScript training at Makina Corpus",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.makina-corpus.net:formation/formation-javascript-example-project.git"
+  },
+  "author": "Mathieu DARTIGUES",
+  "license": "ISC"
+}
