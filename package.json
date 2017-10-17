@@ -16,6 +16,7 @@
   "author": "Mathieu DARTIGUES",
   "license": "ISC",
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
