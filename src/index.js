@@ -1,6 +1,7 @@
 /* eslint no-console: ["error", { allow: ["log"] }] */
 /* global window */
 import './script2';
+import './styles/main.css';
 
 const a = 'b';
 const b = 'c';
