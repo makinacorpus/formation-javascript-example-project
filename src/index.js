@@ -17,3 +17,39 @@ const { destination, origine } = myObject;
 console.log(destination, origine, myObject);
 console.log(myArray2, myArray);
 
+class HelloClass {
+  myProperty = 'Hey it\'s me !';
+
+  afficher(message) {
+    console.log(message, this.myProperty);
+  }
+}
+
+const newClass = new HelloClass();
+newClass.afficher('Hello World');
+
+{
+  let maVariableLet = 'a';
+  const maVariableConstante = 'b';
+  var maVariableVar = 'c';
+  {
+      console.log(maVariableLet); // 'a'
+      console.log(maVariableConstante); // 'b'
+      console.log(maVariableVar); // 'c'
+      maVariableLet = 'ab';
+      // maVariableConstante = 'bc';
+      maVariableVar = 'cd';
+      {
+        console.log(maVariableLet); // undefined
+        let maVariableLet = 'aLocale';
+        console.log(maVariableLet); // 'aLocale'
+      }
+      console.log(maVariableLet); // 'ab'
+      console.log(maVariableConstante); // 'b'
+      console.log(maVariableVar); // 'cd'
+  }
+  console.log(maVariableLet); // 'ab'
+  console.log(maVariableConstante); // 'c'
+  console.log(maVariableVar); // 'cd'
+
+}
